@@ -1,4 +1,4 @@
-// कोणतेही एनिमेशन नाही, फक्त लिंक्स + नवीन functions
+// कोणतेही एनिमेशन नाही, फक्त लिंक्स + functions
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('#chapters a');
     links.forEach(link => {
@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // फॉन्ट साइज चेंज (global - chapters मध्येही काम करेल)
+    // फॉन्ट साइज चेंज (global)
     window.changeFontSize = function(delta) {
         let currentSize = parseInt(getComputedStyle(document.body).fontSize) || 16;
-        let newSize = Math.max(12, Math.min(24, currentSize + delta)); // 12px ते 24px लिमिट
+        let newSize = Math.max(12, Math.min(24, currentSize + delta));
         document.body.style.fontSize = newSize + 'px';
-        localStorage.setItem('fontSize', newSize); // सेव्ह करा
+        localStorage.setItem('fontSize', newSize);
     };
 
-    // पेज लोड वर सेव्ह केलेला फॉन्ट अप्लाय करा
+    // पेज लोड वर सेव्ह केलेला फॉन्ट
     const savedFont = localStorage.getItem('fontSize');
     if (savedFont) {
         document.body.style.fontSize = savedFont + 'px';
@@ -28,22 +28,24 @@ document.addEventListener('DOMContentLoaded', function() {
         if (body.classList.contains('light-mode')) {
             body.classList.remove('light-mode');
             body.classList.add('dark-mode');
-            button.textContent = '☀️'; // लाइट आइकॉन
+            button.textContent = '☀️';
             localStorage.setItem('mode', 'dark');
         } else {
             body.classList.remove('dark-mode');
             body.classList.add('light-mode');
-            button.textContent = '🌙'; // डार्क आइकॉन
+            button.textContent = '🌙';
             localStorage.setItem('mode', 'light');
         }
     };
 
-    // पेज लोड वर सेव्ह केलेला मोड अप्लाय करा
+    // पेज लोड वर सेव्ह केलेला मोड
     const savedMode = localStorage.getItem('mode');
     const body = document.body;
     if (savedMode === 'dark') {
         body.classList.remove('light-mode');
         body.classList.add('dark-mode');
-        document.getElementById('toggle-mode').textContent = '☀️';
+        if (document.getElementById('toggle-mode')) {
+            document.getElementById('toggle-mode').textContent = '☀️';
+        }
     }
 });
