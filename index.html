@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>श्रीमद् भगवद्गीता - व्हिंटेज ओल्ड बुक स्टाइल</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> <!-- व्हिंटेज फॉन्ट्स -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="light-mode"> <!-- डिफॉल्ट लाइट मोड -->
     <div class="container">
         <header>
+            <div class="controls"> <!-- नवीन कंट्रोल्स -->
+                <button id="font-smaller" onclick="changeFontSize(-2)">A-</button>
+                <button id="font-larger" onclick="changeFontSize(2)">A+</button>
+                <button id="toggle-mode" onclick="toggleMode()">🌙</button> <!-- डिफॉल्ट नाइट आइकॉन -->
+            </div>
             <h1>श्रीमद् भगवद्गीता</h1>
             <p>अध्यायांची यादी - जुनी पुस्तकासारखी शांतता</p>
         </header>
@@ -33,6 +38,9 @@
             <li><a href="chapters/chapter17.html">अध्याय १७: श्रद्धात्रय विभाग योग</a></li>
             <li><a href="chapters/chapter18.html">अध्याय १८: मोक्षसंन्यास योग</a></li>
         </ul>
+        <footer>
+            <p>Made with ❤️ by ADX </p> <!-- नवीन फुटर -->
+        </footer>
     </div>
     <script src="main.js"></script>
 </body>
