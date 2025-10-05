@@ -1,17 +1,20 @@
-/* व्हिंटेज ओल्ड बुक थीम: सेपिया रंग, जुनी कागदाची पार्श्वभूमी, सेरिफ फॉन्ट्स */
+/* महाभारत काळातील हस्तलिखित थीम: तमळपत्रासारखी पर्चमेंट, wavy edges, folds */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    --bg-gradient: linear-gradient(to bottom, #f5f5dc 0%, #fdf6e3 50%, #e8d5b7 100%);
-    --container-bg: rgba(245, 245, 220, 0.9);
-    --text-color: #8B4513;
-    --h1-color: #A0522D;
+    --bg-gradient: linear-gradient(to bottom, #fffef0 0%, #fdf6e3 50%, #e8d5b7 100%); /* क्रीमी पर्चमेंट */
+    --container-bg: #fffef0; /* जुन्या हस्तलिखिताची पार्श्वभूमी */
+    --text-color: #8B4513; /* काळा इंक */
+    --h1-color: #A0522D; /* गडद ब्राउन */
     --link-color: #8B4513;
-    --border-color: #D2B48C;
+    --border-color: #D2B48C; /* सेपिया बॉर्डर */
+    --accent-color: #DC143C; /* रेड अॅक्सेंट – प्राचीन हस्तलिखितातील लाल रेषा */
     --shadow-inner: inset 0 0 10px rgba(139, 69, 19, 0.1);
     --shadow-outer: 0 4px 8px rgba(0, 0, 0, 0.2);
-    --font-size: 16px; /* डिफॉल्ट */
-    --glow-color: rgba(210, 180, 140, 0.6); /* ग्लो रंग - सेपिया */
+    --font-size: 16px;
+    --glow-color: rgba(210, 180, 140, 0.6);
+    /* नॉइज टेक्स्चर – जुन्या कागदाची खरखरीत वाटणारी */
+    --noise-texture: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==");
 }
 
 body {
@@ -23,18 +26,23 @@ body {
     line-height: 1.6;
     font-size: var(--font-size);
     transition: background 0.3s ease, color 0.3s ease;
+    /* प्राचीन काळाची पार्श्वभूमी – हलकी नॉइज */
+    background-image: var(--noise-texture);
+    background-blend-mode: multiply;
+    background-size: 100px 100px;
 }
 
 body.dark-mode {
     --bg-gradient: linear-gradient(to bottom, #2c1810 0%, #3d2b1f 50%, #1a0f0b 100%);
-    --container-bg: rgba(45, 24, 16, 0.9);
+    --container-bg: #2c1810;
     --text-color: #f4e4bc;
     --h1-color: #deb887;
     --link-color: #f4e4bc;
     --border-color: #8b7355;
-    --shadow-inner: inset 0 0 10px rgba(244, 228, 188, 0.1);
-    --shadow-outer: 0 4px 8px rgba(0, 0, 0, 0.4);
-    --glow-color: rgba(139, 115, 85, 0.6); /* डार्कसाठी ग्लो */
+    --accent-color: #FF4500; /* डार्कसाठी ऑरेंज-रेड */
+    --glow-color: rgba(139, 115, 85, 0.6);
+    /* डार्कसाठी नॉइज adjust */
+    background-blend-mode: screen;
 }
 
 .container {
@@ -42,10 +50,26 @@ body.dark-mode {
     margin: 0 auto;
     padding: 40px;
     background: var(--container-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    box-shadow: var(--shadow-inner), var(--shadow-outer);
+    border: 2px solid var(--accent-color); /* रेड बॉर्डर – हस्तलिखितातील लाल फ्रेम */
+    border-radius: 0; /* सरळ कडा, स्क्रोलसारखी */
+    box-shadow: var(--shadow-inner), var(--shadow-outer), 0 0 50px rgba(220, 20, 60, 0.2); /* गोल्डन ग्लो सारखा रेड शॅडो */
     position: relative;
+    /* महाभारत स्टाइल: wavy edges */
+    filter: url(#wavy);
+    /* पर्चमेंट फोल्ड्स */
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(#fff3, #fff0 2% 24%, #fff2 25%, #4321 0, #0000 27% 48%, #9632 50%, #fff2 0, #fff0 52% 73%, #9632 75%, #fff3 0, #fff0 78% 97%, #9632);
+    opacity: 0.3; /* हलकी फोल्ड्स */
+    pointer-events: none;
+    border-radius: inherit;
 }
 
 .container::before {
@@ -55,12 +79,14 @@ body.dark-mode {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23f0e68c" width="100" height="100" opacity="0.05"/><circle fill="%23daa520" cx="20" cy="20" r="2"/><circle fill="%23daa520" cx="80" cy="80" r="1.5"/><line stroke="%23daa520" stroke-width="0.5" x1="10" y1="90" x2="90" y2="10" opacity="0.1"/></svg>');
+    background: var(--noise-texture); /* अतिरिक्त नॉइज */
+    opacity: 0.1;
     pointer-events: none;
 }
 
-body.dark-mode .container::before {
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23deb887" width="100" height="100" opacity="0.03"/><circle fill="%23f4e4bc" cx="20" cy="20" r="2"/><circle fill="%23f4e4bc" cx="80" cy="80" r="1.5"/><line stroke="%23f4e4bc" stroke-width="0.5" x1="10" y1="90" x2="90" y2="10" opacity="0.05"/></svg>');
+body.dark-mode .container::after {
+    opacity: 0.4;
+    background: conic-gradient(#0003, #f4e4bc 2% 24%, #0002 25%, #8b7355 0, #0000 27% 48%, #deb887 50%, #0002 0, #f4e4bc 52% 73%, #deb887 75%, #0003 0, #f4e4bc 78% 97%, #deb887);
 }
 
 h1 {
@@ -69,8 +95,11 @@ h1 {
     color: var(--h1-color);
     text-align: center;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 10px var(--accent-color); /* रेड ग्लो – दिव्य फील */
     letter-spacing: 2px;
+    font-style: italic; /* हस्तलिखितासारखी */
+    border-bottom: 2px solid var(--accent-color); /* लाल रेषा */
+    padding-bottom: 10px;
 }
 
 p {
@@ -80,7 +109,7 @@ p {
     font-style: italic;
 }
 
-/* कंट्रोल्स स्टाइल */
+/* कंट्रोल्स – प्राचीन लुक */
 .controls {
     text-align: right;
     margin-bottom: 20px;
@@ -89,22 +118,23 @@ p {
 .controls button {
     background: var(--border-color);
     color: var(--text-color);
-    border: none;
+    border: 1px solid var(--accent-color); /* रेड बॉर्डर */
     padding: 8px 12px;
     margin-left: 10px;
-    border-radius: 3px;
+    border-radius: 0; /* सरळ, प्राचीन */
     cursor: pointer;
     font-size: 1em;
-    transition: background 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 body.dark-mode .controls button {
     background: var(--border-color);
     color: var(--link-color);
+    border-color: var(--accent-color);
 }
 
 .controls button:hover {
-    opacity: 0.8;
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 #chapters {
@@ -114,7 +144,7 @@ body.dark-mode .controls button {
 
 #chapters li {
     margin: 15px 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px dashed var(--accent-color); /* डॅश्ड रेड लाइन – हस्तलिखितातील */
 }
 
 #chapters a {
@@ -124,24 +154,30 @@ body.dark-mode .controls button {
     color: var(--link-color);
     text-decoration: none;
     font-size: 1.1em;
-    border-left: 3px solid var(--border-color);
-    transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; /* ग्लोसाठी ट्रांझिशन */
+    border-left: 3px solid var(--accent-color);
+    transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* फोल्ड फीलसाठी */
+}
+
+#chapters a::before {
+    content: "॥"; /* देवनागरी श्लोक मार्क */
+    position: absolute;
+    right: 10px;
+    color: var(--accent-color);
 }
 
 #chapters a:hover {
     color: var(--h1-color);
-    background: rgba(210, 180, 140, 0.2);
-    box-shadow: 0 0 15px var(--glow-color), inset 0 0 10px var(--glow-color); /* हॉवर ग्लो इफेक्ट - सॉफ्ट आउटलाइन आणि इनसेट ग्लो */
-    transform: translateX(5px); /* हलकी राइट शिफ्ट - पुस्तक पान उलटण्यासारखी */
-}
-
-body.dark-mode #chapters a:hover {
-    background: rgba(139, 115, 85, 0.2);
+    background: rgba(220, 20, 60, 0.1); /* रेड हायलाइट */
     box-shadow: 0 0 15px var(--glow-color), inset 0 0 10px var(--glow-color);
     transform: translateX(5px);
 }
 
-/* अध्याय पेजसाठी (global) */
+body.dark-mode #chapters a:hover {
+    background: rgba(255, 69, 0, 0.1);
+}
+
+/* अध्याय पेजसाठी – श्लोकांना प्राचीन लुक */
 .verses {
     text-align: left;
     font-size: 1em;
@@ -151,21 +187,33 @@ body.dark-mode #chapters a:hover {
 
 .verses p {
     margin: 20px 0;
-    padding: 10px;
-    background: rgba(253, 246, 227, 0.5);
-    border-left: 4px solid var(--h1-color);
+    padding: 15px;
+    background: rgba(255, 254, 240, 0.8); /* हलकी पर्चमेंट */
+    border-left: 4px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color); /* बिलॅटरल रेड */
     text-align: justify;
+    position: relative;
+}
+
+.verses p::before {
+    content: "ॐ"; /* ओम सिम्बल – महाभारत फील */
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 1.5em;
+    color: var(--accent-color);
 }
 
 body.dark-mode .verses p {
-    background: rgba(244, 228, 188, 0.3);
+    background: rgba(44, 24, 16, 0.8);
 }
 
 .verses strong {
     color: var(--h1-color);
+    text-decoration: underline wavy var(--accent-color); /* वेव्ही अंडरलाइन */
 }
 
-/* मागे जा लिंक (global) */
+/* मागे जा लिंक */
 a[href="../index.html"] {
     display: inline-block;
     margin-top: 20px;
@@ -173,12 +221,12 @@ a[href="../index.html"] {
     background: var(--border-color);
     color: var(--text-color);
     text-decoration: none;
-    border-radius: 3px;
-    transition: box-shadow 0.3s ease; /* ग्लो chapters मध्येही */
+    border: 1px solid var(--accent-color);
+    transition: box-shadow 0.3s ease;
 }
 
 a[href="../index.html"]:hover {
-    box-shadow: 0 0 10px var(--glow-color);
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 /* फुटर */
@@ -186,7 +234,7 @@ footer {
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--accent-color);
     font-size: 0.9em;
     color: var(--text-color);
     opacity: 0.7;
@@ -194,6 +242,7 @@ footer {
 
 body.dark-mode footer {
     color: var(--link-color);
+    border-color: var(--accent-color);
 }
 
 /* मोबाइलसाठी */
@@ -203,5 +252,6 @@ body.dark-mode footer {
     #chapters a { font-size: 1em; padding: 10px; }
     .controls { text-align: center; }
     .controls button { margin: 5px; }
-    #chapters a:hover { transform: none; } /* मोबाइलवर शिफ्ट नाही */
+    #chapters a:hover { transform: none; }
+    .verses p::before { font-size: 1.2em; }
 }
