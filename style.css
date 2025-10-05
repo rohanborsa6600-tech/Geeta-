@@ -1,23 +1,48 @@
 /* व्हिंटेज ओल्ड बुक थीम: सेपिया रंग, जुनी कागदाची पार्श्वभूमी, सेरिफ फॉन्ट्स */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
+:root {
+    --bg-gradient: linear-gradient(to bottom, #f5f5dc 0%, #fdf6e3 50%, #e8d5b7 100%);
+    --container-bg: rgba(245, 245, 220, 0.9);
+    --text-color: #8B4513;
+    --h1-color: #A0522D;
+    --link-color: #8B4513;
+    --border-color: #D2B48C;
+    --shadow-inner: inset 0 0 10px rgba(139, 69, 19, 0.1);
+    --shadow-outer: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --font-size: 16px; /* डिफॉल्ट */
+}
+
 body {
-    font-family: 'Noto Serif Devanagari', 'Playfair Display', serif; /* व्हिंटेज देवनागरी आणि सेरिफ फॉन्ट */
-    background: linear-gradient(to bottom, #f5f5dc 0%, #fdf6e3 50%, #e8d5b7 100%); /* जुनी कागदासारखी सेपिया ग्रेडिएंट */
-    color: #8B4513; /* तपकिरी रंग - जुना इंक */
+    font-family: 'Noto Serif Devanagari', 'Playfair Display', serif;
+    background: var(--bg-gradient);
+    color: var(--text-color);
     margin: 0;
     padding: 20px;
     line-height: 1.6;
+    font-size: var(--font-size);
+    transition: background 0.3s ease, color 0.3s ease; /* स्मूथ स्विच */
+}
+
+body.dark-mode {
+    --bg-gradient: linear-gradient(to bottom, #2c1810 0%, #3d2b1f 50%, #1a0f0b 100%); /* डार्क सेपिया */
+    --container-bg: rgba(45, 24, 16, 0.9);
+    --text-color: #f4e4bc; /* हलका क्रीम */
+    --h1-color: #deb887;
+    --link-color: #f4e4bc;
+    --border-color: #8b7355;
+    --shadow-inner: inset 0 0 10px rgba(244, 228, 188, 0.1);
+    --shadow-outer: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px;
-    background: rgba(245, 245, 220, 0.9); /* हलकी सेपिया पार्श्वभूमी */
-    border: 2px solid #D2B48C; /* जुनी पुस्तकाची कड */
+    background: var(--container-bg);
+    border: 2px solid var(--border-color);
     border-radius: 5px;
-    box-shadow: inset 0 0 10px rgba(139, 69, 19, 0.1), 0 4px 8px rgba(0, 0, 0, 0.2); /* आतील सावली आणि बाहेरील */
+    box-shadow: var(--shadow-inner), var(--shadow-outer);
     position: relative;
 }
 
@@ -28,25 +53,56 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23f0e68c" width="100" height="100" opacity="0.05"/><circle fill="%23daa520" cx="20" cy="20" r="2"/><circle fill="%23daa520" cx="80" cy="80" r="1.5"/><line stroke="%23daa520" stroke-width="0.5" x1="10" y1="90" x2="90" y2="10" opacity="0.1"/></svg>'); /* हलकी जुनी कागदाची टेक्स्चर (SVG) */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23f0e68c" width="100" height="100" opacity="0.05"/><circle fill="%23daa520" cx="20" cy="20" r="2"/><circle fill="%23daa520" cx="80" cy="80" r="1.5"/><line stroke="%23daa520" stroke-width="0.5" x1="10" y1="90" x2="90" y2="10" opacity="0.1"/></svg>');
     pointer-events: none;
+}
+
+body.dark-mode .container::before {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23deb887" width="100" height="100" opacity="0.03"/><circle fill="%23f4e4bc" cx="20" cy="20" r="2"/><circle fill="%23f4e4bc" cx="80" cy="80" r="1.5"/><line stroke="%23f4e4bc" stroke-width="0.5" x1="10" y1="90" x2="90" y2="10" opacity="0.05"/></svg>'); /* डार्क टेक्स्चर */
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3em;
-    color: #A0522D; /* गडद तपकिरी */
+    color: var(--h1-color);
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    letter-spacing: 2px; /* जुनी पुस्तकासारखी स्पेसिंग */
+    letter-spacing: 2px;
 }
 
 p {
     font-size: 1.2em;
-    color: #8B4513;
+    color: var(--text-color);
     text-align: center;
     font-style: italic;
+}
+
+/* कंट्रोल्स स्टाइल */
+.controls {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    background: var(--border-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode .controls button {
+    background: var(--border-color);
+    color: var(--link-color);
+}
+
+.controls button:hover {
+    opacity: 0.8;
 }
 
 #chapters {
@@ -56,53 +112,77 @@ p {
 
 #chapters li {
     margin: 15px 0;
-    border-bottom: 1px solid #D2B48C; /* जुनी लाइन */
+    border-bottom: 1px solid var(--border-color);
 }
 
 #chapters a {
     display: block;
     padding: 15px;
     background: transparent;
-    color: #8B4513;
+    color: var(--link-color);
     text-decoration: none;
     font-size: 1.1em;
-    border-left: 3px solid #D2B48C; /* पुस्तकातील इंडेंट */
-    transition: none; /* कोणतेही एनिमेशन नाही */
+    border-left: 3px solid var(--border-color);
+    transition: none;
 }
 
 #chapters a:hover {
-    color: #A0522D; /* फक्त रंग बदल, एनिमेशन नाही */
-    background: rgba(210, 180, 140, 0.2); /* हलकी पार्श्वभूमी */
+    color: var(--h1-color);
+    background: rgba(210, 180, 140, 0.2);
 }
 
-/* अध्याय पेजसाठी अतिरिक्त */
+body.dark-mode #chapters a:hover {
+    background: rgba(139, 115, 85, 0.2);
+}
+
+/* अध्याय पेजसाठी (global) */
 .verses {
     text-align: left;
     font-size: 1em;
     line-height: 2;
+    color: var(--text-color); /* chapters मध्येही apply होईल */
 }
 
 .verses p {
     margin: 20px 0;
     padding: 10px;
-    background: rgba(253, 246, 227, 0.5); /* हलकी कागद */
-    border-left: 4px solid #A0522D;
+    background: rgba(253, 246, 227, 0.5);
+    border-left: 4px solid var(--h1-color);
     text-align: justify;
 }
 
-.verses strong {
-    color: #A0522D;
+body.dark-mode .verses p {
+    background: rgba(244, 228, 188, 0.3);
 }
 
-/* मागे जा लिंक */
+.verses strong {
+    color: var(--h1-color);
+}
+
+/* मागे जा लिंक (global) */
 a[href="../index.html"] {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: #D2B48C;
-    color: #8B4513;
+    background: var(--border-color);
+    color: var(--text-color);
     text-decoration: none;
     border-radius: 3px;
+}
+
+/* फुटर */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+body.dark-mode footer {
+    color: var(--link-color);
 }
 
 /* मोबाइलसाठी */
@@ -110,4 +190,6 @@ a[href="../index.html"] {
     .container { padding: 20px; }
     h1 { font-size: 2em; }
     #chapters a { font-size: 1em; padding: 10px; }
+    .controls { text-align: center; }
+    .controls button { margin: 5px; }
 }
