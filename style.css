@@ -1,0 +1,72 @@
+/* नैसर्गिक थीम: हिरवी पार्श्वभूमी, साधी फॉन्ट्स, नैसर्गिक रंग */
+body {
+    font-family: 'Noto Sans Devanagari', sans-serif; /* Devanagari फॉन्ट */
+    background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 50%, #228B22 100%); /* आकाश ते जंगल */
+    color: #228B22; /* गडद हिरवा */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* पार्श्वभूमी */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* हलकी पारदर्शक पार्श्वभूमी */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #006400; /* गडद हिरवा */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #556B2F;
+}
+
+#chapters {
+    list-style: none;
+    padding: 0;
+}
+
+#chapters li {
+    margin: 10px 0;
+}
+
+#chapters a {
+    display: block;
+    padding: 15px;
+    background: rgba(152, 251, 152, 0.7); /* हलकी हिरवी */
+    color: #228B22;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    font-size: 1.1em;
+}
+
+#chapters a:hover {
+    background: rgba(34, 139, 34, 0.8); /* गडद हिरवी */
+    color: white;
+    transform: scale(1.02); /* हलकी मोशन */
+}
+
+/* मोबाइलसाठी */
+@media (max-width: 600px) {
+    h1 { font-size: 2em; }
+    #chapters a { font-size: 1em; padding: 10px; }
+}
