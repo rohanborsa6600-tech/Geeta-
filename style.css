@@ -54,8 +54,8 @@ body.dark-mode {
     border-radius: 0; /* सरळ कडा, स्क्रोलसारखी */
     box-shadow: var(--shadow-inner), var(--shadow-outer), 0 0 50px rgba(220, 20, 60, 0.2); /* गोल्डन ग्लो सारखा रेड शॅडो */
     position: relative;
-    /* महाभारत स्टाइल: wavy edges */
-    filter: url(#wavy);
+    /* महाभारत स्टाइल: CSS-only wavy edges (clip-path ने) */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 2% 98%, 5% 99%, 98% 99%, 95% 98%);
     /* पर्चमेंट फोल्ड्स */
 }
 
@@ -177,7 +177,7 @@ body.dark-mode #chapters a:hover {
     background: rgba(255, 69, 0, 0.1);
 }
 
-/* अध्याय पेजसाठी – श्लोकांना प्राचीन लुक */
+/* अध्याय पेजसाठी – श्लोकांना प्राचीन लुक (global) */
 .verses {
     text-align: left;
     font-size: 1em;
@@ -213,7 +213,7 @@ body.dark-mode .verses p {
     text-decoration: underline wavy var(--accent-color); /* वेव्ही अंडरलाइन */
 }
 
-/* मागे जा लिंक */
+/* मागे जा लिंक (global) */
 a[href="../index.html"] {
     display: inline-block;
     margin-top: 20px;
@@ -247,7 +247,7 @@ body.dark-mode footer {
 
 /* मोबाइलसाठी */
 @media (max-width: 600px) {
-    .container { padding: 20px; }
+    .container { padding: 20px; clip-path: none; } /* मोबाइलवर wavy काढा */
     h1 { font-size: 2em; }
     #chapters a { font-size: 1em; padding: 10px; }
     .controls { text-align: center; }
