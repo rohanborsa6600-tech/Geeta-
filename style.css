@@ -11,6 +11,7 @@
     --shadow-inner: inset 0 0 10px rgba(139, 69, 19, 0.1);
     --shadow-outer: 0 4px 8px rgba(0, 0, 0, 0.2);
     --font-size: 16px; /* डिफॉल्ट */
+    --glow-color: rgba(210, 180, 140, 0.6); /* ग्लो रंग - सेपिया */
 }
 
 body {
@@ -21,18 +22,19 @@ body {
     padding: 20px;
     line-height: 1.6;
     font-size: var(--font-size);
-    transition: background 0.3s ease, color 0.3s ease; /* स्मूथ स्विच */
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode {
-    --bg-gradient: linear-gradient(to bottom, #2c1810 0%, #3d2b1f 50%, #1a0f0b 100%); /* डार्क सेपिया */
+    --bg-gradient: linear-gradient(to bottom, #2c1810 0%, #3d2b1f 50%, #1a0f0b 100%);
     --container-bg: rgba(45, 24, 16, 0.9);
-    --text-color: #f4e4bc; /* हलका क्रीम */
+    --text-color: #f4e4bc;
     --h1-color: #deb887;
     --link-color: #f4e4bc;
     --border-color: #8b7355;
     --shadow-inner: inset 0 0 10px rgba(244, 228, 188, 0.1);
     --shadow-outer: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --glow-color: rgba(139, 115, 85, 0.6); /* डार्कसाठी ग्लो */
 }
 
 .container {
@@ -58,7 +60,7 @@ body.dark-mode {
 }
 
 body.dark-mode .container::before {
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23deb887" width="100" height="100" opacity="0.03"/><circle fill="%23f4e4bc" cx="20" cy="20" r="2"/><circle fill="%23f4e4bc" cx="80" cy="80" r="1.5"/><line stroke="%23f4e4bc" stroke-width="0.5" x1="10" y1="90" x2="90" y2="10" opacity="0.05"/></svg>'); /* डार्क टेक्स्चर */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23deb887" width="100" height="100" opacity="0.03"/><circle fill="%23f4e4bc" cx="20" cy="20" r="2"/><circle fill="%23f4e4bc" cx="80" cy="80" r="1.5"/><line stroke="%23f4e4bc" stroke-width="0.5" x1="10" y1="90" x2="90" y2="10" opacity="0.05"/></svg>');
 }
 
 h1 {
@@ -123,16 +125,20 @@ body.dark-mode .controls button {
     text-decoration: none;
     font-size: 1.1em;
     border-left: 3px solid var(--border-color);
-    transition: none;
+    transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; /* ग्लोसाठी ट्रांझिशन */
 }
 
 #chapters a:hover {
     color: var(--h1-color);
     background: rgba(210, 180, 140, 0.2);
+    box-shadow: 0 0 15px var(--glow-color), inset 0 0 10px var(--glow-color); /* हॉवर ग्लो इफेक्ट - सॉफ्ट आउटलाइन आणि इनसेट ग्लो */
+    transform: translateX(5px); /* हलकी राइट शिफ्ट - पुस्तक पान उलटण्यासारखी */
 }
 
 body.dark-mode #chapters a:hover {
     background: rgba(139, 115, 85, 0.2);
+    box-shadow: 0 0 15px var(--glow-color), inset 0 0 10px var(--glow-color);
+    transform: translateX(5px);
 }
 
 /* अध्याय पेजसाठी (global) */
@@ -140,7 +146,7 @@ body.dark-mode #chapters a:hover {
     text-align: left;
     font-size: 1em;
     line-height: 2;
-    color: var(--text-color); /* chapters मध्येही apply होईल */
+    color: var(--text-color);
 }
 
 .verses p {
@@ -168,6 +174,11 @@ a[href="../index.html"] {
     color: var(--text-color);
     text-decoration: none;
     border-radius: 3px;
+    transition: box-shadow 0.3s ease; /* ग्लो chapters मध्येही */
+}
+
+a[href="../index.html"]:hover {
+    box-shadow: 0 0 10px var(--glow-color);
 }
 
 /* फुटर */
@@ -192,4 +203,5 @@ body.dark-mode footer {
     #chapters a { font-size: 1em; padding: 10px; }
     .controls { text-align: center; }
     .controls button { margin: 5px; }
+    #chapters a:hover { transform: none; } /* मोबाइलवर शिफ्ट नाही */
 }
